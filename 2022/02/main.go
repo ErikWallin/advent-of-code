@@ -93,7 +93,7 @@ func run2(input string) int {
 }
 
 func main() {
-	submit := true
+	submit := false
 	verbose := false
 	common.Run(run1, run2, tests, 2022, 2, submit, verbose)
 }
