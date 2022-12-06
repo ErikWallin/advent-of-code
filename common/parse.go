@@ -22,6 +22,17 @@ func ParseStringList(input string, sep string) []string {
 	return lines
 }
 
+// Parse input to slice of strings, i.e. []string
+// Works for both csv (sep = ",") and row delimited (sep = "\n")
+func ParseStringStringList(input string, sep1 string, sep2 string) [][]string {
+	var lists [][]string
+	groups := strings.Split(input, sep1)
+	for i := 0; i < len(groups); i++ {
+		lists = append(lists, strings.Split(groups[i], sep2))
+	}
+	return lists
+}
+
 func ParseRuneListList(input string) [][]rune {
 	var xys [][]rune
 	for _, x := range strings.Split(input, "\n") {

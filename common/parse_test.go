@@ -32,23 +32,40 @@ func TestParseStringList(t *testing.T) {
 	var input = `hej
 på
 dig`
-	var ints = ParseStringList(input, "\n")
-	if len(ints) != 3 {
-		t.Errorf("ParseIntList expected len 3, got %d", len(ints))
+	var rows = ParseStringList(input, "\n")
+	if len(rows) != 3 {
+		t.Errorf("ParseStringList expected len 3, got %d", len(rows))
 	}
-	if ints[1] != "på" {
-		t.Errorf("ParseIntList expected item <på>, got %s", ints[1])
+	if rows[1] != "på" {
+		t.Errorf("ParseStringList expected item <på>, got %s", rows[1])
 	}
 }
 
-func TestParseStringList_sentense(t *testing.T) {
+func TestParseStringList_sentence(t *testing.T) {
 	var input = `hej på dig`
 	var ints = ParseStringList(input, " ")
 	if len(ints) != 3 {
-		t.Errorf("ParseIntList expected len 3, got %d", len(ints))
+		t.Errorf("ParseStringList expected len 3, got %d", len(ints))
 	}
 	if ints[1] != "på" {
-		t.Errorf("ParseIntList expected item <på>, got %s", ints[1])
+		t.Errorf("ParseStringList expected item <på>, got %s", ints[1])
+	}
+}
+
+func TestParseStringStringList(t *testing.T) {
+	var input = `hej
+
+Kapitel 1
+Blabla
+
+Modo är bäst
+`
+	var groups = ParseStringStringList(input, "\n\n", "\n")
+	if len(groups) != 3 {
+		t.Errorf("ParseStringStringList expected len 3, got %d", len(groups))
+	}
+	if groups[1][1] != "Blabla" {
+		t.Errorf("ParseStringStringList expected item <Blabla>, got %s", groups[1][1])
 	}
 }
 
