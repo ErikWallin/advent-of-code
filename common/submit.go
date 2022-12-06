@@ -8,9 +8,9 @@ import (
 	"strings"
 )
 
-func Submit(year int, day int, level int, answer int) {
-	fmt.Printf("Will submit for %d/%d/%d: %d\n", year, day, level, answer)
-	payload := bytes.NewReader([]byte(fmt.Sprintf("level=%d&answer=%d", level, answer)))
+func Submit(year int, day int, level int, answer interface{}) {
+	fmt.Printf("Will submit for %d/%d/%d: %v\n", year, day, level, answer)
+	payload := bytes.NewReader([]byte(fmt.Sprintf("level=%d&answer=%v", level, answer)))
 	url := fmt.Sprintf("https://adventofcode.com/%d/day/%d/answer", year, day)
 	req, err := http.NewRequest(http.MethodPost, url, payload)
 	Check(err)

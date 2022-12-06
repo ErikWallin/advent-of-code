@@ -5,7 +5,7 @@ import (
 	mapset "github.com/deckarep/golang-set/v2"
 )
 
-func run1(input string) int {
+func run1(input string) interface{} {
 	for i := 0; i < len(input)-5; i++ {
 		word := input[i : i+4]
 		set := mapset.NewSet[rune]()
@@ -19,7 +19,7 @@ func run1(input string) int {
 	return 0
 }
 
-func run2(input string) int {
+func run2(input string) interface{} {
 	for i := 0; i < len(input)-15; i++ {
 		word := input[i : i+14]
 		set := mapset.NewSet[rune]()

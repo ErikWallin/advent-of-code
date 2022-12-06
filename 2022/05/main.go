@@ -7,7 +7,7 @@ import (
 	"github.com/ErikWallin/advent-of-code/common"
 )
 
-func run1(input string) int {
+func run1(input string) interface{} {
 	groups := common.ParseStringStringList(input, "\n\n", "\n")
 	stacks := map[int][]rune{}
 
@@ -46,7 +46,7 @@ func run1(input string) int {
 	return 0
 }
 
-func run2(input string) int {
+func run2(input string) interface{} {
 	groups := common.ParseStringStringList(input, "\n\n", "\n")
 	stacks := map[int][]rune{}
 	for i := 1; i < 10; i++ {

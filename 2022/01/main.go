@@ -6,7 +6,7 @@ import (
 	"github.com/ErikWallin/advent-of-code/common"
 )
 
-func run1(input string) int {
+func run1(input string) interface{} {
 	elves := common.ParseStringList(input, "\n\n")
 	heaviest := 0
 	for _, elf := range elves {
@@ -22,9 +22,7 @@ func run1(input string) int {
 	return heaviest
 }
 
-// for _, row := range list
-
-func run2(input string) int {
+func run2(input string) interface{} {
 	elves := common.ParseStringList(input, "\n\n")
 	var ans []int
 	for _, elf := range elves {

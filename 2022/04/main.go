@@ -6,7 +6,7 @@ import (
 	"github.com/ErikWallin/advent-of-code/common"
 )
 
-func run1(input string) int {
+func run1(input string) interface{} {
 	list := common.ParseStringList(input, "\n")
 	sum := 0
 	for _, row := range list {
@@ -22,7 +22,7 @@ func run1(input string) int {
 	return sum
 }
 
-func run2(input string) int {
+func run2(input string) interface{} {
 	list := common.ParseStringList(input, "\n")
 	sum := 0
 	for _, row := range list {

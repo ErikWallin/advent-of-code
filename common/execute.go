@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func Run(run1 func(string) int, run2 func(string) int, tests TestCases, year int, day int, submit bool, verbose bool) (int, int) {
+func Run(run1 func(string) interface{}, run2 func(string) interface{}, tests TestCases, year int, day int, submit bool, verbose bool) (interface{}, interface{}) {
 	if tests != nil {
 		tests.Run(run1, run2, !verbose)
 	}

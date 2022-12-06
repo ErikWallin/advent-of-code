@@ -13,7 +13,7 @@ type TestCase struct {
 	ExpectedPart2 int
 }
 
-func (t TestCases) Run(fn1 func(string) int, fn2 func(string) int, hideInput bool) {
+func (t TestCases) Run(fn1 func(string) interface{}, fn2 func(string) interface{}, hideInput bool) {
 	for _, test := range t {
 		part1I := fn1(test.Input)
 		part2I := fn2(test.Input)
