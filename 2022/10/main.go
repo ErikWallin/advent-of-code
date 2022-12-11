@@ -35,7 +35,6 @@ func run2(input string) interface{} {
 		}
 		xs = append(xs, xs[len(xs)-1], xs[len(xs)-1]+common.MustAtoi(strings.Split(row, " ")[1]))
 	}
-	fmt.Printf("xs[]=%d\n", xs)
 	for i := range xs[1:] {
 		pos := i % 40
 		if pos == 0 {
