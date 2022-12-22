@@ -156,6 +156,5 @@ func printMap(visited mapset.Set[Coordinate]) {
 
 func main() {
 	submit := false
-	verbose := false
-	common.Run(run1, run2, tests, 2022, 9, submit, verbose)
+	common.Run(run1, run2, tests, 2022, 9, submit)
 }

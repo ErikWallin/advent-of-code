@@ -5,9 +5,9 @@ import (
 	"time"
 )
 
-func Run(run1 func(string) interface{}, run2 func(string) interface{}, tests TestCases, year int, day int, submit bool, verbose bool) (interface{}, interface{}) {
+func Run(run1 func(string) interface{}, run2 func(string) interface{}, tests TestCases, year int, day int, submit bool) (interface{}, interface{}) {
 	if tests != nil {
-		tests.Run(run1, run2, !verbose)
+		tests.Run(run1, run2)
 	}
 	input := ReadFile(year, day, "puzzle.txt")
 	start := time.Now()

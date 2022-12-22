@@ -92,6 +92,5 @@ func run2(input string) interface{} {
 
 func main() {
 	submit := false
-	verbose := false
-	common.Run(run1, run2, tests, 2022, 20, submit, verbose)
+	common.Run(run1, run2, tests, 2022, 20, submit)
 }

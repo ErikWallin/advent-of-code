@@ -125,6 +125,5 @@ func simulate(chamber [][]rune, moveIndex int, times int, moves []rune, rocks []
 
 func main() {
 	submit := false
-	verbose := false
-	common.Run(run1, run2, tests, 2022, 17, submit, verbose)
+	common.Run(run1, run2, tests, 2022, 17, submit)
 }

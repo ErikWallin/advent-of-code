@@ -42,7 +42,7 @@ func MaxOfInts(vars ...int) int {
 	}
 	max := vars[0]
 	for _, i := range vars {
-		if max < i {
+		if i > max {
 			max = i
 		}
 	}
@@ -56,7 +56,7 @@ func MinOfInts(vars ...int) int {
 	}
 	min := vars[0]
 	for _, i := range vars {
-		if min > i {
+		if i < min {
 			min = i
 		}
 	}

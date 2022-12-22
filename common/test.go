@@ -13,17 +13,10 @@ type TestCase struct {
 	ExpectedPart2 int
 }
 
-func (t TestCases) Run(fn1 func(string) interface{}, fn2 func(string) interface{}, hideInput bool) {
+func (t TestCases) Run(fn1 func(string) interface{}, fn2 func(string) interface{}) {
 	for _, test := range t {
 		part1I := fn1(test.Input)
-		part2I := fn2(test.Input)
 		passedPart1 := part1I == test.ExpectedPart1 || test.ExpectedPart1 == 0
-		passedPart2 := part2I == test.ExpectedPart2 || test.ExpectedPart2 == 0
-		passed := passedPart1 && passedPart2
-
-		if !passed && !hideInput {
-			fmt.Println("Input ", test.Input)
-		}
 		if passedPart1 && test.ExpectedPart1 != 0 {
 			fmt.Println(" - PART1: ", part1I, " correct")
 		}
@@ -31,6 +24,9 @@ func (t TestCases) Run(fn1 func(string) interface{}, fn2 func(string) interface{
 			fmt.Println(" - PART1: ", part1I, " but expected ", test.ExpectedPart1)
 			os.Exit(1)
 		}
+
+		part2I := fn2(test.Input)
+		passedPart2 := part2I == test.ExpectedPart2 || test.ExpectedPart2 == 0
 		if passedPart2 && test.ExpectedPart2 != 0 {
 			fmt.Println(" - PART2: ", part2I, " correct")
 		}

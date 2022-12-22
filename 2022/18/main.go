@@ -159,6 +159,5 @@ func wayOut(air Coordinate, history mapset.Set[Coordinate], iterations int) bool
 
 func main() {
 	submit := false
-	verbose := false
-	common.Run(run1, run2, tests, 2022, 18, submit, verbose)
+	common.Run(run1, run2, tests, 2022, 18, submit)
 }
