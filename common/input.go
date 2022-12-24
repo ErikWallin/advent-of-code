@@ -19,8 +19,6 @@ func ReadFile(year int, day int, filePath string) string {
 	}
 	if _, err := os.Stat(filePath); os.IsNotExist(err) {
 		createFile(year, day, filePath)
-	} else {
-		fmt.Println("INFO: File already exists.. Will not create new one")
 	}
 	file, err := os.ReadFile(filePath)
 	Check(err)
